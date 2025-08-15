@@ -85,6 +85,9 @@ The portfolio is built with modular components, making it easy to:
 - Modify animations
 - Update content
 
+## 🚀 Live Demo
+**🌐 [View Live Portfolio](https://rajesh-portfolio-ruddy.vercel.app)**
+
 ## 📄 License
 This project is open source and available under the [MIT License](LICENSE).
 
@@ -92,9 +95,9 @@ This project is open source and available under the [MIT License](LICENSE).
 Feel free to fork this project and submit pull requests for any improvements!
 
 ## 📞 Contact
-- **Portfolio**: [Live Demo](your-portfolio-url)
+- **Portfolio**: [Live Demo](https://rajesh-portfolio-ruddy.vercel.app)
 - **GitHub**: [@Yenganollarajesh](https://github.com/Yenganollarajesh)
-- **Email**: rajesh@example.com
+- **Email**: rajeshyenganolla@gmail.com
 
 ---
 
