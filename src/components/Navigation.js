@@ -53,21 +53,6 @@ function Navigation({ activeSection, scrollToSection }) {
           </button>
         </div>
       </div>
-      
-      <div className="nav-status-bar">
-        <div className="status-item">
-          <span className="status-label">SCORE:</span>
-          <span className="status-value">999,999</span>
-        </div>
-        <div className="status-item">
-          <span className="status-label">LEVEL:</span>
-          <span className="status-value">99</span>
-        </div>
-        <div className="status-item">
-          <span className="status-label">TIME:</span>
-          <span className="status-value">∞</span>
-        </div>
-      </div>
     </nav>
   );
 }
