@@ -36,7 +36,7 @@ function Skills() {
 
   return (
     <section id="skills" className="skills-section">
-      <div className="container">
+      <div className="skills-content">
         <div className="section-header">
           <h2 className="section-title">Skill Tree</h2>
           <p className="section-subtitle">Unlock the power of this coding warrior's abilities</p>

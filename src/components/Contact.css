@@ -1,8 +1,9 @@
 /* Contact component specific styles - inherit button styles from global */
 .contact-section {
   background: var(--bg-dark);
-  width: 100%;
   position: relative;
+  width: 100%;
+  padding: 3rem 0;
 }
 
 .contact-section::before {
@@ -12,80 +13,152 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
-    radial-gradient(circle at 25% 75%, rgba(0, 255, 65, 0.07) 0%, transparent 50%),
-    radial-gradient(circle at 75% 25%, rgba(0, 255, 65, 0.05) 0%, transparent 50%);
+  background: radial-gradient(circle at 20% 80%, rgba(0, 255, 65, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(0, 255, 65, 0.05) 0%, transparent 50%);
   pointer-events: none;
-  z-index: 0;
 }
 
 .contact-content {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3rem;
   width: 100%;
 }
 
 .contact-info {
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
   width: 100%;
 }
 
 .contact-subtitle {
-  color: var(--primary-color);
-  font-size: 1.3rem;
-  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
   font-family: 'Orbitron', monospace;
 }
 
 .contact-description {
-  color: var(--text-primary);
+  margin-bottom: 3rem;
+}
+
+.contact-description p {
+  color: var(--text-secondary);
   font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  max-width: 100%;
+  margin: 0 auto;
+  word-break: break-word;
 }
 
 .contact-details {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+  margin-bottom: 3rem;
+  width: 100%;
+  max-width: 100%;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1rem;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: 0;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 255, 65, 0.2);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.copy-btn {
+  background: rgba(0, 255, 65, 0.1);
+  border: 1px solid rgba(0, 255, 65, 0.3);
+  color: var(--primary-color);
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
   transition: all 0.3s ease;
-}
-
-.contact-item:hover {
-  border-color: var(--primary-color);
-  background: rgba(0, 255, 65, 0.05);
-  transform: translateX(5px);
-}
-
-.contact-icon {
-  width: 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  min-width: 40px;
   height: 40px;
-  background: var(--primary-color);
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--bg-dark);
-  font-size: 1.2rem;
-  box-shadow: 0 0 15px var(--primary-color);
+  flex-shrink: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.copy-btn:hover {
+  background: rgba(0, 255, 65, 0.2);
+  border-color: rgba(0, 255, 65, 0.5);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+.copy-btn:active {
+  transform: scale(0.95);
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 255, 65, 0.1);
+  border: 1px solid rgba(0, 255, 65, 0.3);
+  border-radius: 4px;
 }
 
 .contact-text {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.6;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-text strong {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  font-family: 'Press Start 2P', cursive;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.contact-value {
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: 'Orbitron', monospace;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+.contact-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: 'Orbitron', monospace;
+  transition: all 0.3s ease;
+  word-break: break-word;
+  line-height: 1.4;
+  cursor: pointer;
+  pointer-events: auto;
+  display: inline-block;
+}
+
+.contact-link:hover {
+  color: var(--text-primary);
+  text-shadow: 0 0 10px var(--primary-color);
 }
 
 .contact-cta {
@@ -94,17 +167,22 @@
 }
 
 .cta-title {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 1.3rem;
   color: var(--primary-color);
+  font-size: 1.5rem;
   margin-bottom: 1rem;
-  text-shadow: var(--glow);
+  font-family: 'Press Start 2P', cursive;
+  text-transform: uppercase;
 }
 
 .cta-text {
   color: var(--text-secondary);
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  word-break: break-word;
 }
 
 .contact-form-container {
@@ -189,11 +267,95 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .contact-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    padding: 0 2rem;
   }
   
-  .contact-form {
-    padding: 1.5rem;
+  .contact-details {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .contact-item {
+    padding: 1rem;
+  }
+  
+  .contact-text {
+    align-items: flex-start;
+  }
+  
+  .contact-text strong {
+    font-size: 0.8rem;
+  }
+  
+  .contact-value,
+  .contact-link {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-content {
+    padding: 0 1rem;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+  
+  .contact-text {
+    align-items: center;
+  }
+  
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.8rem;
+  }
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: var(--primary-color);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-family: 'Orbitron', monospace;
+  white-space: nowrap;
+  z-index: 1000;
+  border: 1px solid rgba(0, 255, 65, 0.3);
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+  animation: tooltipFadeIn 0.3s ease-in-out;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.9);
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
   }
 }

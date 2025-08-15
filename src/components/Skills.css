@@ -20,6 +20,9 @@
 }
 
 .skills-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3rem;
   position: relative;
   z-index: 1;
   width: 100%;
@@ -27,9 +30,10 @@
 
 .skills-grid {
   display: grid;
-  grid-template-columns: minmax(350px, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 1.5rem;
   width: 100%;
+  margin-bottom: 2rem;
 }
 
 .skill-category {
@@ -230,7 +234,13 @@
 
 .skills-cta {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 3rem;
+  padding: 2rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .cta-title {
@@ -239,6 +249,8 @@
   color: var(--primary-color);
   margin-bottom: 1rem;
   text-shadow: var(--glow);
+  text-align: center;
+  width: 100%;
 }
 
 .cta-text {
@@ -246,8 +258,21 @@
   font-size: 1.1rem;
   margin-bottom: 2rem;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
+  line-height: 1.6;
+  width: 100%;
+}
+
+.skills-cta .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.skills-cta .btn-icon {
+  font-size: 1.2rem;
 }
 
 /* Responsive Design */

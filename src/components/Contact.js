@@ -1,158 +1,188 @@
 import React, { useState } from 'react';
 import './Contact.css';
 
-function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
+const Contact = () => {
+  const [copiedItem, setCopiedItem] = useState(null);
+  const [hoveredItem, setHoveredItem] = useState(null);
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+  const handleCopy = async (text, itemName) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopiedItem(itemName);
+      
+      // Reset copied state after 2 seconds
+      setTimeout(() => {
+        setCopiedItem(null);
+      }, 2000);
+    } catch (err) {
+      console.error('Failed to copy text: ', err);
+    }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+  const Tooltip = ({ show, message, children, hoverMessage, isHovered }) => {
+    if (!show && !isHovered) return children;
+    
+    return (
+      <div className="tooltip-container">
+        {children}
+        <div className="tooltip">
+          {show ? message : hoverMessage}
+        </div>
+      </div>
+    );
   };
 
   return (
     <section id="contact" className="contact-section">
-      <div className="container">
-        <div className="section-header">
+      <div className="contact-content">
+        <div className="contact-info">
           <h2 className="section-title">Contact Mission Control</h2>
-          <p className="section-subtitle">Ready to start an epic collaboration? Send a transmission!</p>
-        </div>
-        
-        <div className="contact-content">
-          <div className="contact-info">
-            <h3 className="contact-subtitle">🎮 Mission Briefing</h3>
-            <p className="contact-description">
-              Ready to level up your digital presence? Whether you need a frontend warrior 
-              for your next project or want to discuss exciting opportunities, I'm here to help!
+          <p className="contact-subtitle">Ready to start an epic collaboration? Get in touch!</p>
+          
+          <div className="contact-description">
+            <p>
+              I'm always excited to connect with fellow developers, potential collaborators, and anyone interested in creating amazing digital experiences. Whether you have a project in mind, want to discuss technology, or just want to say hello, feel free to reach out!
             </p>
+          </div>
+          
+          <div className="contact-details">
+            <div className="contact-item">
+              <div className="contact-icon">📧</div>
+              <div className="contact-text">
+                <strong>Email:</strong> 
+                <span className="contact-value">rajeshyenganolla@gmail.com</span>
+              </div>
+              <Tooltip 
+                show={copiedItem === 'email'} 
+                message="Email copied!" 
+                hoverMessage="Copy Email"
+                isHovered={hoveredItem === 'email'}
+              >
+                <button 
+                  className="copy-btn"
+                  onClick={() => handleCopy('rajeshyenganolla@gmail.com', 'email')}
+                  onMouseEnter={() => setHoveredItem('email')}
+                  onMouseLeave={() => setHoveredItem(null)}
+                >
+                  {copiedItem === 'email' ? (
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                  ) : (
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                  )}
+                </button>
+              </Tooltip>
+            </div>
             
-            <div className="contact-details">
-              <div className="contact-item">
-                <span className="contact-icon">📧</span>
-                <div className="contact-text">
-                  <h4>Email</h4>
-                  <p>rajesh@example.com</p>
-                </div>
+            <div className="contact-item">
+              <div className="contact-icon">📱</div>
+              <div className="contact-text">
+                <strong>Phone:</strong> 
+                <span className="contact-value">+91 9052357676</span>
               </div>
-              
-              <div className="contact-item">
-                <span className="contact-icon">📍</span>
-                <div className="contact-text">
-                  <h4>Location</h4>
-                  <p>Available for remote collaboration worldwide</p>
-                </div>
+              <Tooltip 
+                show={copiedItem === 'phone'} 
+                message="Phone number copied!" 
+                hoverMessage="Copy Phone"
+                isHovered={hoveredItem === 'phone'}
+              >
+                <button 
+                  className="copy-btn"
+                  onClick={() => handleCopy('+91 9052357676', 'phone')}
+                  onMouseEnter={() => setHoveredItem('phone')}
+                  onMouseLeave={() => setHoveredItem(null)}
+                >
+                  {copiedItem === 'phone' ? (
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                  ) : (
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                  )}
+                </button>
+              </Tooltip>
+            </div>
+            
+            <div className="contact-item">
+              <div className="contact-icon">📱</div>
+              <div className="contact-text">
+                <strong>Alternative:</strong> 
+                <span className="contact-value">+91 9392118587</span>
               </div>
-              
-              <div className="contact-item">
-                <span className="contact-icon">⚡</span>
-                <div className="contact-text">
-                  <h4>Response Time</h4>
-                  <p>Within 24 hours</p>
-                </div>
+              <Tooltip 
+                show={copiedItem === 'alternative'} 
+                message="Alternative phone copied!" 
+                hoverMessage="Copy Phone"
+                isHovered={hoveredItem === 'alternative'}
+              >
+                <button 
+                  className="copy-btn"
+                  onClick={() => handleCopy('+91 9392118587', 'alternative')}
+                  onMouseEnter={() => setHoveredItem('alternative')}
+                  onMouseLeave={() => setHoveredItem(null)}
+                >
+                  {copiedItem === 'alternative' ? (
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polyline points="20,6 9,17 4,12"></polyline>
+                    </svg>
+                  ) : (
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                  )}
+                </button>
+              </Tooltip>
+            </div>
+            
+            <div className="contact-item">
+              <div className="contact-icon">🔗</div>
+              <div className="contact-text">
+                <strong>LinkedIn:</strong> 
+                <a 
+                  href="https://linkedin.com/in/rajeshyenganolla" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="contact-link"
+                >
+                  linkedin.com/in/rajeshyenganolla
+                </a>
               </div>
             </div>
             
-            <div className="contact-cta">
-              <h4 className="cta-title">🚀 Ready to Launch?</h4>
-              <p className="cta-text">
-                Let's create something amazing together! Whether it's a new project, 
-                collaboration opportunity, or just a friendly chat about coding.
-              </p>
+            <div className="contact-item">
+              <div className="contact-icon">🐙</div>
+              <div className="contact-text">
+                <strong>GitHub:</strong> 
+                <a 
+                  href="https://github.com/Yenganollarajesh" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="contact-link"
+                >
+                  github.com/Yenganollarajesh
+                </a>
+              </div>
             </div>
           </div>
           
-          <div className="contact-form-container">
-            <form className="contact-form" onSubmit={handleSubmit}>
-              <div className="form-group">
-                <label htmlFor="name" className="form-label">
-                  <span className="label-icon">👤</span>
-                  Commander Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="form-input"
-                  placeholder="Enter your name"
-                  required
-                />
-              </div>
-              
-              <div className="form-group">
-                <label htmlFor="email" className="form-label">
-                  <span className="label-icon">📧</span>
-                  Transmission Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="form-input"
-                  placeholder="Enter your email"
-                  required
-                />
-              </div>
-              
-              <div className="form-group">
-                <label htmlFor="subject" className="form-label">
-                  <span className="label-icon">🎯</span>
-                  Mission Type
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="form-input"
-                  placeholder="What's your mission?"
-                  required
-                />
-              </div>
-              
-              <div className="form-group">
-                <label htmlFor="message" className="form-label">
-                  <span className="label-icon">💬</span>
-                  Mission Details
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="form-textarea"
-                  placeholder="Describe your mission requirements..."
-                  rows="5"
-                  required
-                ></textarea>
-              </div>
-              
-              <button type="submit" className="btn btn-primary submit-btn">
-                <span className="btn-icon">🚀</span>
-                Launch Mission
-              </button>
-            </form>
+          <div className="contact-cta">
+            <h3 className="cta-title">Ready to Start a Mission?</h3>
+            <p className="cta-text">
+              Let's collaborate on something amazing! Whether you have a project in mind or just want to connect, I'm always excited to hear from fellow developers and potential collaborators.
+            </p>
           </div>
         </div>
       </div>
     </section>
   );
-}
+};
 
 export default Contact;
