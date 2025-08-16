@@ -176,7 +176,7 @@ const Contact = () => {
           <div className="contact-cta">
             <h3 className="cta-title">Ready to Start a Mission?</h3>
             <p className="cta-text">
-              Let's collaborate on something amazing! Whether you have a project in mind or just want to connect, I'm always excited to hear from fellow developers and potential collaborators.
+              I'm actively seeking new opportunities to contribute my frontend expertise to innovative projects. Whether you have a project in mind or want to discuss potential collaboration, I'm always excited to hear from fellow developers and potential employers.
             </p>
           </div>
         </div>

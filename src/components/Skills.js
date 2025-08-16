@@ -11,7 +11,9 @@ function Skills() {
         { name: "CSS", level: 85, icon: "🎨" },
         { name: "JavaScript", level: 88, icon: "🛡️" },
         { name: "React.js", level: 82, icon: "⚛️" },
-        { name: "Vue.js", level: 90, icon: "🎯" }
+        { name: "Vue.js", level: 90, icon: "🎯" },
+        { name: "Nuxt.js", level: 88, icon: "🚀" },
+        { name: "Pinia", level: 85, icon: "📦" }
       ]
     },
     {
@@ -29,7 +31,8 @@ function Skills() {
       skills: [
         { name: "Bootstrap", level: 85, icon: "🎨" },
         { name: "Responsive Design", level: 90, icon: "📱" },
-        { name: "UI/UX Design", level: 80, icon: "🎭" }
+        { name: "Vuetify", level: 70, icon: "🎨" }
+        // { name: "UI/UX Design", level: 80, icon: "🎭" }
       ]
     }
   ];
@@ -99,10 +102,10 @@ function Skills() {
         
         <div className="skills-cta">
           <h3 className="cta-title">Ready to Level Up Together?</h3>
-          <p className="cta-text">Join forces with this skilled warrior to create epic digital experiences!</p>
+          <p className="cta-text">I'm actively seeking new opportunities to contribute my frontend expertise to innovative projects. Let's discuss how we can work together!</p>
           <button className="btn btn-primary" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>
             <span className="btn-icon">⚔️</span>
-            Start Collaboration
+            Let's Connect
           </button>
         </div>
       </div>

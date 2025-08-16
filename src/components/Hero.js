@@ -15,24 +15,24 @@ function Hero() {
           </h1>
           
           <p className="hero-description">
-            Motivated Frontend Developer with 8 months of hands-on experience, 
-            specializing in JavaScript, Vue.js, and React.js. I craft reliable, 
-            high-performing applications with smooth user experiences. Ready to 
-            level up your digital presence with practical, efficient solutions?
+            Experienced Frontend Developer with 8 months of proven expertise in building enterprise-level applications. 
+            Specializing in JavaScript, Vue.js, and React.js, I deliver robust, scalable solutions that 
+            drive business value. Currently leading frontend development at AlterSquare, crafting 
+            sophisticated project management systems used by real companies.
           </p>
           
           <div className="hero-stats">
             <div className="stat-item">
-              <span className="stat-label">EXP</span>
+              <span className="stat-label">EXPERIENCE</span>
               <span className="stat-value">8 Months</span>
             </div>
             <div className="stat-item">
-              <span className="stat-label">SKILLS</span>
-              <span className="stat-value">8+</span>
+              <span className="stat-label">PROJECTS</span>
+              <span className="stat-value">2+ Live</span>
             </div>
             <div className="stat-item">
-              <span className="stat-label">PROJECTS</span>
-              <span className="stat-value">AI-Powered</span>
+              <span className="stat-label">CURRENT</span>
+              <span className="stat-value">AlterSquare</span>
             </div>
           </div>
           

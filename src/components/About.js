@@ -32,18 +32,43 @@ function About() {
             <div className="experience-timeline">
               <h3 className="about-subtitle">📅 Quest Log</h3>
               <div className="timeline-item">
-                <div className="timeline-date">Dec 2024 - Jul 2025</div>
+                <div className="timeline-date">Oct 2024 - Nov 2024</div>
                 <div className="timeline-content">
-                  <h4>Frontend Developer</h4>
-                  <p>Building cutting-edge web applications with modern technologies</p>
+                  <h4>Zysk Technologies Homepage</h4>
+                  <p>Developed a static website for Zysk Technologies showcasing their services and company information</p>
+                  <a 
+                    href="https://zysk-technologies-nu.vercel.app" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="project-link"
+                  >
+                    🌐 View Live Project
+                  </a>
                 </div>
               </div>
               
               <div className="timeline-item">
-                <div className="timeline-date">Jan 2025 - July 2025</div>
+                <div className="timeline-date">Nov 2024 - Dec 2024</div>
                 <div className="timeline-content">
-                  <h4>AI-Powered Project Management Platform</h4>
-                  <p>Developed a comprehensive system integrating calendar scheduling, 
+                  <h4>Task Tracker Application</h4>
+                  <p>Built a task management application to help users organize and track their daily tasks</p>
+                  <a 
+                    href="https://task-tracker-gray-eta.vercel.app" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="project-link"
+                  >
+                    🌐 View Live Project
+                  </a>
+                </div>
+              </div>
+              
+              <div className="timeline-item">
+                <div className="timeline-date">Dec 2024 - Present</div>
+                <div className="timeline-content">
+                  <h4>Frontend Developer at AlterSquare</h4>
+                  <p>Building cutting-edge web applications with modern technologies. 
+                  Developed a comprehensive Project Management Platform integrating calendar scheduling, 
                   task management, and lead tracking with real-time notifications.</p>
                 </div>
               </div>
