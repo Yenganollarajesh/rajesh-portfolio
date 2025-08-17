@@ -11,24 +11,7 @@ function About() {
         </div>
         
         <div className="about-content">
-          <div className="about-text">
-            <div className="about-description">
-              <h3 className="about-subtitle">🎯 Mission Statement</h3>
-              <p>
-                I am a motivated Frontend Developer with 8 months of hands-on experience, 
-                primarily focused on front-end development using JavaScript and Vue.js. 
-                I specialize in building reliable and high-performing applications, with 
-                a strong emphasis on delivering smooth, user-friendly experiences.
-              </p>
-              
-              <h3 className="about-subtitle">⚡ Core Abilities</h3>
-              <p>
-                Known for attention to detail and a passion for creating practical, 
-                efficient solutions. I thrive on conquering coding challenges and 
-                transforming complex requirements into elegant, user-centric applications.
-              </p>
-            </div>
-            
+          <div className="about-left">
             <div className="experience-timeline">
               <h3 className="about-subtitle">📅 Quest Log</h3>
               <div className="timeline-item">
@@ -75,31 +58,22 @@ function About() {
             </div>
           </div>
           
-          <div className="about-visual">
-            <div className="skill-tree">
-              <div className="skill-node primary">
-                <span className="skill-icon">⚡</span>
-                <span className="skill-name">Frontend</span>
-                <span className="skill-level">Master</span>
-              </div>
-              <div className="skill-branch"></div>
-              <div className="skill-node secondary">
-                <span className="skill-icon">🎯</span>
-                <span className="skill-name">Vue.js</span>
-                <span className="skill-level">Expert</span>
-              </div>
-              <div className="skill-branch"></div>
-              <div className="skill-node secondary">
-                <span className="skill-icon">⚔️</span>
-                <span className="skill-name">React.js</span>
-                <span className="skill-level">Expert</span>
-              </div>
-              <div className="skill-branch"></div>
-              <div className="skill-node secondary">
-                <span className="skill-icon">🛡️</span>
-                <span className="skill-name">JavaScript</span>
-                <span className="skill-level">Expert</span>
-              </div>
+          <div className="about-right">
+            <div className="about-description">
+              <h3 className="about-subtitle">🎯 Mission Statement</h3>
+              <p>
+                I am a motivated Frontend Developer with 8 months of hands-on experience, 
+                primarily focused on front-end development using JavaScript and Vue.js. 
+                I specialize in building reliable and high-performing applications, with 
+                a strong emphasis on delivering smooth, user-friendly experiences.
+              </p>
+              
+              <h3 className="about-subtitle">⚡ Core Abilities</h3>
+              <p>
+                Known for attention to detail and a passion for creating practical, 
+                efficient solutions. I thrive on conquering coding challenges and 
+                transforming complex requirements into elegant, user-centric applications.
+              </p>
             </div>
           </div>
         </div>

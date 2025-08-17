@@ -42,30 +42,63 @@ body {
   background-image: 
     radial-gradient(circle at 25% 25%, rgba(0, 255, 65, 0.03) 0%, transparent 50%),
     radial-gradient(circle at 75% 75%, rgba(255, 0, 128, 0.03) 0%, transparent 50%);
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   margin: 0;
   padding: 0;
 }
 
 .portfolio {
-  min-height: 100vh;
-  position: relative;
+  height: 100vh;
+  padding-top: 4rem;
   width: 100%;
   background: var(--bg-dark);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.portfolio-main {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100vh - 60px); /* Subtract navigation height */
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--bg-dark);
+  /* Enhanced smooth scrolling */
+  -webkit-overflow-scrolling: touch; /* iOS smooth scrolling */
+  scroll-padding-top: 20px; /* Prevent content from being hidden under fixed nav */
+  /* Additional smooth scroll properties */
+  scroll-snap-type: y proximity; /* Optional: adds subtle snap points */
+  scroll-snap-align: start; /* Aligns sections to snap points */
 }
 
-.portfolio::before {
-  content: '';
+/* Custom scrollbar for webkit browsers */
+.portfolio-main::-webkit-scrollbar {
+  width: 8px;
+}
+
+.portfolio-main::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+  display: none;
+}
+
+.portfolio-main::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+.portfolio-main::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+.portfolio-nav-container {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  background-image: 
-    radial-gradient(circle at 25% 25%, rgba(0, 255, 65, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(255, 0, 128, 0.03) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: -1;
+  z-index: 1000;
+  /* font-size: 100px; */
 }
 
 .container {
@@ -84,7 +117,7 @@ body {
 
 .section-title {
   font-family: 'Press Start 2P', cursive;
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   color: var(--primary-color);
   margin-bottom: 1rem;
   text-shadow: var(--glow);
@@ -93,10 +126,12 @@ body {
 
 .section-subtitle {
   font-size: 1.2rem;
+  font-family: 'Orbitron', monospace;
   color: var(--text-secondary);
-  max-width: 600px;
+  max-width: 100%;
   margin: 0 auto;
   line-height: 1.6;
+  width: 100%;
 }
 
 /* Buttons */
@@ -110,7 +145,7 @@ body {
   font-weight: 400;
   text-decoration: none;
   border: 2px solid var(--primary-color);
-  border-radius: 0;
+  border-radius: 0.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
   gap: 0.5rem;
@@ -147,7 +182,6 @@ body {
   z-index: 2;
 }
 
-/* Button Container Styles */
 .hero-buttons,
 .project-actions,
 .nav-cta {
@@ -180,6 +214,8 @@ body {
 
 .btn:hover {
   text-shadow: 0 0 10px rgba(0, 255, 65, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 255, 65, 0.3);
 }
 
 .btn-primary {
@@ -262,49 +298,15 @@ body {
   margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-  .btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.75rem;
-  }
-  
-  .hero-buttons,
-  .project-actions,
-  .skills-cta {
-    justify-content: center;
-    gap: 0.75rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .btn {
-    padding: 0.75rem 1.25rem;
-    font-size: 0.625rem;
-  }
-  
-  .hero-buttons,
-  .project-actions,
-  .skills-cta {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .hero-buttons .btn,
-  .project-actions .btn,
-  .skills-cta .btn {
-    width: 100%;
-    max-width: 300px;
-    justify-content: center;
-  }
-}
 
 section {
-  padding: 3rem 0;
+  padding: 2rem 0;
   position: relative;
   background: var(--bg-dark);
   margin: 0;
   border: none;
+  /* Ensure smooth scrolling works properly */
+  scroll-margin-top: 20px;
 }
 
 section:first-child {
@@ -415,37 +417,33 @@ section::before {
   opacity: 0.1;
 }
 
-/* Responsive Design */
+/* Responsive scroll behavior */
 @media (max-width: 768px) {
-  .container {
-    padding: 0 1rem;
-    max-width: 100%;
+  .portfolio-main {
+    height: calc(100vh - 60px); /* Adjust for smaller navigation on mobile */
   }
-  
   .section-title {
-    font-size: 1.5rem;
+    font-size: 1.1rem !important;
   }
-  
-  section {
-    padding: 4rem 0;
-  }
-  
-  .btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.75rem;
+  .section-subtitle {
+    font-size: 0.9rem !important;
   }
 }
 
 @media (max-width: 480px) {
   .section-title {
-    font-size: 1.25rem;
+    font-size: 0.8rem !important;
   }
-  
   .section-subtitle {
-    font-size: 1rem;
+    font-size: 0.6rem !important;
   }
-  
-  .container {
-    padding: 0 0.5rem;
+  .portfolio-main {
+    height: calc(100vh - 50px); /* Further adjust for very small screens */
+  }
+}
+
+@media (max-width: 1024px) {
+  .portfolio {
+    padding-top: 3rem;
   }
 }

@@ -7,11 +7,10 @@ function Hero() {
       <div className="hero-content">
         <div className="hero-text">
           <h1 className="hero-title">
-            <span className="greeting">Player 1 Ready</span>
+            {/* <span className="greeting">Player 1 Ready</span> */}
             <span className="name">Rajesh</span>
-            <span className="title">Level 99 Frontend Warrior</span>
+            <span className="title">Full Stack Warrior</span>
             {/* <span className="subtitle">Vue.js & React.js Master</span> */}
-            <span className="subtitle">Full Stack Warrior</span>
           </h1>
           
           <p className="hero-description">
@@ -38,17 +37,28 @@ function Hero() {
           
           <div className="hero-buttons">
             <button className="btn btn-primary" onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}>
-              <span className="btn-icon">🎮</span>
+              <span className="btn-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+              </span>
               View Missions
             </button>
             <button className="btn btn-secondary" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>
-              <span className="btn-icon">⚔️</span>
+              <span className="btn-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </span>
               Join Party
             </button>
           </div>
         </div>
         
-        <div className="hero-visual">
+        {/* <div className="hero-visual">
           <div className="hero-image-placeholder">
             <div className="profile-circle">
               <div className="pixel-avatar">
@@ -80,7 +90,7 @@ function Hero() {
               <div className="level-badge">99</div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       
       <div className="scroll-indicator">

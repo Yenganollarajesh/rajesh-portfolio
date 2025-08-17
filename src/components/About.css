@@ -29,7 +29,11 @@
   width: 100%;
 }
 
-.about-text {
+.about-left {
+  width: 100%;
+}
+
+.about-right {
   width: 100%;
 }
 
@@ -48,7 +52,7 @@
 }
 
 .experience-timeline {
-  margin-top: 1.5rem;
+  /* margin-top: 1.5rem; */
 }
 
 .timeline-item {
@@ -185,7 +189,17 @@
     gap: 2rem;
   }
   
-  .skill-tree {
-    max-width: 100%;
+  .about-left,
+  .about-right {
+    width: 100%;
+  }
+  
+  .timeline-item {
+    margin-bottom: 2rem;
+  }
+  
+  .about-description {
+    font-size: 1rem;
+    line-height: 1.7;
   }
 }

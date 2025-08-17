@@ -13,33 +13,51 @@ function Portfolio() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['home', 'about', 'projects', 'skills', 'contact'];
-      const scrollPosition = window.scrollY + 100;
+      const container = document.querySelector('.portfolio-main');
+      
+      if (container) {
+        const scrollPosition = container.scrollTop + 100;
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sections[i]);
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(sections[i]);
-          break;
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const section = document.getElementById(sections[i]);
+          if (section && section.offsetTop <= scrollPosition) {
+            setActiveSection(sections[i]);
+            break;
+          }
         }
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const container = document.querySelector('.portfolio-main');
+    if (container) {
+      container.addEventListener('scroll', handleScroll);
+      return () => container.removeEventListener('scroll', handleScroll);
+    }
   }, []);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    const container = document.querySelector('.portfolio-main');
+    
+    if (element && container) {
+      // Calculate the scroll position relative to the container
+      const containerRect = container.getBoundingClientRect();
+      const elementRect = element.getBoundingClientRect();
+      const scrollTop = container.scrollTop + elementRect.top - containerRect.top;
+      
+      // Smooth scroll to the section
+      container.scrollTo({
+        top: scrollTop,
+        behavior: 'smooth'
+      });
     }
   };
 
   return (
     <div className="portfolio">
-      <Navigation activeSection={activeSection} scrollToSection={scrollToSection} />
+      <Navigation activeSection={activeSection} scrollToSection={scrollToSection}  className='portfolio-nav-container'/>
       
-      <main>
+      <main className='portfolio-main'>
         <section id="home">
           <Hero />
         </section>
