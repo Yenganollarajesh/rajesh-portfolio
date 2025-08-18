@@ -151,6 +151,8 @@
   text-align: center;
   align-items: center;
   justify-content: center;
+  max-width: 15rem;
+  width: 100%;
 }
 
 .timeline-content .project-link:hover {
@@ -280,6 +282,7 @@
   .timeline-content .project-link {
     padding: 0.625rem 1.25rem;
     font-size: 0.8rem;
+    max-width: 15rem;
   }
 }
 

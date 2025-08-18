@@ -199,27 +199,236 @@
   margin-right: auto;
 }
 
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .project-card {
+    padding: 2rem;
+  }
+  
+  .project-title {
+    font-size: 1.4rem;
+    min-width: 250px;
+    line-height: 1.2;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .cta-title {
+    font-size: 1.5rem;
+  }
+  
+  .features-title,
+  .tech-title,
+  .rewards-title {
+    font-size: 1rem;
+  }
+  
+  .project-description {
+    font-size: 0.95rem;
+  }
+  
+  .tech-stack {
+    gap: 0.5rem;
+  }
+  
+  .tech-item {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Mobile Styles */
 @media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .project-card {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
   .project-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 1rem;
   }
   
   .project-title {
     min-width: auto;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.2;
+    word-wrap: break-word;
+    hyphens: auto;
   }
   
   .project-meta {
     justify-content: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .difficulty-badge,
+  .project-type {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
+  }
+  
+  .project-description {
+    font-size: 0.9rem;
+    text-align: left;
+    line-height: 1.4;
+  }
+  
+  .features-title,
+  .tech-title,
+  .rewards-title {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .feature-item {
+    font-size: 0.85rem;
+    padding-left: 1.25rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .tech-stack {
+    gap: 0.5rem;
+  }
+  
+  .tech-item {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.7rem;
+  }
+  
+  .rewards-text {
+    font-size: 0.85rem;
   }
   
   .project-actions {
     flex-direction: column;
     align-items: center;
+    gap: 0.75rem;
+    width: 100%;
   }
   
+  .project-actions .btn {
+    width: 100%;
+    max-width: 280px;
+    font-size: 0.85rem;
+    padding: 0.8rem 1rem;
+  }
+  
+  .section-header {
+    margin-bottom: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .cta-section {
+    margin-top: 2rem;
+    padding: 1.5rem 0;
+  }
+  
+  .cta-title {
+    font-size: 1.3rem;
+  }
+  
+  .cta-text {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
   .container {
-    padding: 0 1rem;
+    padding: 0 0.75rem;
+  }
+  
+  .project-card {
+    padding: 1.25rem;
+    border-width: 1px;
+  }
+  
+  .project-title {
+    font-size: 1rem;
+    line-height: 1.1;
+  }
+  
+  .project-description {
+    font-size: 0.85rem;
+  }
+  
+  .features-title,
+  .tech-title,
+  .rewards-title {
+    font-size: 0.85rem;
+  }
+  
+  .feature-item {
+    font-size: 0.8rem;
+    padding-left: 1rem;
+  }
+  
+  .tech-item {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.65rem;
+  }
+  
+  .difficulty-badge,
+  .project-type {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.65rem;
+  }
+  
+  .section-title {
+    font-size: 1.4rem;
+  }
+  
+  .cta-title {
+    font-size: 1.1rem;
+  }
+  
+  .cta-text {
+    font-size: 0.85rem;
+  }
+  
+  .project-actions .btn {
+    font-size: 0.65rem;
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+/* Landscape Mobile Styles */
+@media (max-width: 768px) and (orientation: landscape) {
+  .project-card {
+    padding: 1.25rem;
+  }
+  
+  .project-title {
+    font-size: 1rem;
+  }
+  
+  .features-title,
+  .tech-title,
+  .rewards-title {
+    font-size: 0.85rem;
+  }
+  
+  .feature-item {
+    font-size: 0.8rem;
   }
 }
