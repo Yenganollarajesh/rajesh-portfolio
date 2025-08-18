@@ -16,8 +16,8 @@ function Hero() {
           <p className="hero-description">
             Experienced Frontend Developer with 8 months of proven expertise in building enterprise-level applications. 
             Specializing in JavaScript, Vue.js, and React.js, I deliver robust, scalable solutions that 
-            drive business value. Currently leading frontend development at AlterSquare, crafting 
-            sophisticated project management systems used by real companies.
+            drive business value. Passionate about creating intuitive user experiences and turning complex 
+            requirements into elegant, maintainable code.
           </p>
           
           <div className="hero-stats">
